@@ -52,6 +52,10 @@ app.get('/', (req, res) => {
   res.status(200).json('WORKING');
 });
 
+app.get('/saniya', (req, res) => {
+  res.status(200).json('Aijaz loves Saniya');
+});
+
 app.get('/search', async (req, res) => {
   try {
     const keyw = req.query.keyw;
