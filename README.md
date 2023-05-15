@@ -1,4 +1,4 @@
-# AniKatsu API
+# Makima API
 
 ### Installing
 
