@@ -52,7 +52,7 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
   res.status(200).send({
-        intro: `Welcome to makima.in manga's api`,
+        intro: `Welcome to makima.in's api`,
         routes: ['/search/:query', '/info/:query', '/panels/:query'],
         website: `http://makimaa.infinityfreeapp.com/`,
         copyright: `Developed and created by Mohammad Aijaz`,
