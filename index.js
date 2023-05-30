@@ -51,7 +51,12 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.status(200).json('WORKING');
+  res.status(200).send({
+        intro: `Welcome to makima.in manga's api`,
+        routes: ['/search/:query', '/info/:query', '/panels/:query'],
+        website: `http://makimaa.infinityfreeapp.com/`,
+        copyright: `Developed and created by Mohammad Aijaz`,
+    })
 });
 
 app.get('/saniya', (req, res) => {
