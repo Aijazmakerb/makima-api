@@ -34,6 +34,8 @@ import {
   DownloadReferer,
 } from './lib/anime_parser.js';
 
+import { getPlayerDetails } from './lib/player_parser.js';
+
 const port = process.env.PORT || 3000;
 
 const corsOptions = {
@@ -517,7 +519,18 @@ app.get('/getEpisode/:id', async (req, res) => {
 });
 
 
-
+app.get('/playerDetails/:query', async (req, res) => {
+  try{
+    const data = await getPlayerDetails(req.params.query);
+    res.status(200).json(data);
+  }catch(err){
+    res.status(500).json({
+      status: 500,
+      error: 'Internal Error',
+      message: err,
+    });
+  }
+})
 
 
 app.get('/thread/:episodeId', async (req, res) => {
