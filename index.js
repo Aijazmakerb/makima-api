@@ -526,7 +526,7 @@ app.get('/getEpisode/:id', async (req, res) => {
 
 app.get('/playerDetails/:query', async (req, res) => {
   try{
-    const data = await getPlayerDetails(req.params.id);
+    const data = await getPlayerDetails(req.params.query);
     res.status(200).json(data);
   }catch(err){
     res.status(500).json({
